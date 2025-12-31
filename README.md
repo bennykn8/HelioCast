@@ -88,12 +88,21 @@ Since the given data only report an accumulating daily yield value, appropriate 
   - `MIN_AC`
   - `MAX_AC`
 
-#### Modeling:
-4 candidate baseline models were trained on a training set consisting of the first 80% of the data chronologically.
+### Modeling:
+
+#### Baseline:
+
+I used a non-ML diurnal-adjusted persistence model as my baseline.
+Naive persistence models simply forecasts the horizon to be equal to the current value.
+Our baseline improves on that by scaling that value by the ratio of future irradiance to current irradiance.
+This produces horizon-specific forecasts that naturally rise and fall with daylight conditions.
+
+#### ML Models:
+4 additional candidate models were trained on a training set consisting of the first 80% of the data chronologically.
 - Ridge Regression
 - Elastic Net
 - XGBoost
 - LightGBM
 
 Each modeling process involved grid search hyperparameter tuning and 5-fold cross validation.
-Models were evaluation based on Mean Absolute Error (MAE), which tells us the average prediction error.
+Models were used to predict on a test set and evaluated based on Mean Absolute Error (MAE), which tells us the average prediction error.
