@@ -4,6 +4,9 @@ I aimed to develop a time-series ML model to forecast power production for a sol
 
 The model performs prediction via multi-horizon forecasting. Specifically, a separate model is trained for each horizon (15min, 30min, 1hr, 2hr, 4hr into the future).
 
+Tableau Dashboard for Model Results:
+https://public.tableau.com/views/HelioCastModelPerformances/SummaryDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+
 Files of interest in this repository contain:
 - **Plant_EDA.ipynb**: exploratory analysis of data trends
 - **Plant_Model.ipynb**: data prep/preprocessing, modeling, and model evaluation 
